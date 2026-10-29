@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <meta name="description" content="AURALIS ARC ONE。静下来，听见更多。一段关于声音、质感与沉浸的旅程。" />
+    <title>ARC ONE · AURALIS</title>
+    <link rel="preload" as="image" href="assets/frames/frame_0064.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="assets/lucide.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body data-state="loading" data-station="0">
+    <div class="preloader" id="preloader" role="status" aria-label="正在加载影像">
+      <span class="load-brand">AURALIS</span>
+      <div class="load-center">
+        <span class="micro-label">A STUDY IN SOUND</span>
+        <div class="load-word">ARC ONE<span aria-hidden="true">.</span></div>
+        <div class="load-track"><span id="load-bar"></span></div>
+        <div class="load-meta"><span id="load-message">影像准备中</span><span><b id="load-percent">0</b> / 100</span></div>
+        <div class="load-recovery" id="load-recovery" hidden>
+          <button class="text-button" id="load-retry" type="button">重新加载 <i data-lucide="rotate-cw"></i></button>
+          <button class="text-button" id="load-static" type="button">查看静态版本 <i data-lucide="arrow-up-right"></i></button>
+        </div>
+      </div>
+      <span class="load-edition">SOUND, WITHOUT DISTRACTION.</span>
+    </div>
+
+    <header class="site-header" data-qa-region="header">
+      <a class="brand" href="#arrival" aria-label="AURALIS 首页" data-station-nav data-target="0">
+        <span class="brand-mark" aria-hidden="true">a<span>.</span></span>
+        <span>AURALIS</span>
+      </a>
+      <nav class="header-nav" aria-label="产品章节">
+        <button type="button" data-station-nav data-target="0" aria-current="step">概览</button>
+        <button type="button" data-station-nav data-target="1">静谧</button>
+        <button type="button" data-station-nav data-target="2">声场</button>
+        <button type="button" data-station-nav data-target="3">设计</button>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="sound-button icon-button" id="sound-toggle" aria-label="开启声音" aria-pressed="false" title="开启声音">
+          <i data-lucide="volume-x" class="sound-off-icon"></i>
+          <i data-lucide="volume-2" class="sound-on-icon"></i>
+        </button>
+        <button class="film-button" id="film-open" type="button">
+          <i data-lucide="play"></i><span>完整影片</span><span class="film-duration">00:15</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="experience" id="experience" aria-label="ARC ONE 耳机产品展示">
+      <div class="visual-stage" aria-hidden="true">
+        <img class="stage-poster" id="stage-poster" src="assets/frames/frame_0064.jpg" alt="" />
+        <canvas id="sequence-canvas" width="1344" height="768"></canvas>
+        <div class="stage-shade"></div>
+        <div class="stage-vignette"></div>
+      </div>
+
+      <div class="edition-tag"><span class="status-dot"></span> AURALIS SOUND LAB <span class="edition-year">/ 2026</span></div>
+
+      <div class="narrative" id="narrative" data-qa-region="narrative" aria-live="polite" aria-atomic="true">
+        <section class="chapter-copy is-active" data-copy="0" aria-labelledby="arrival-title">
+          <p class="eyebrow"><span class="chapter-number">01</span><span>THE FIRST ENCOUNTER</span></p>
+          <h1 id="arrival-title">ARC ONE<span class="title-dot">.</span></h1>
+          <p class="chapter-tagline">静下来，听见更多。</p>
+          <p class="chapter-description">让喧嚣退远，让每一次聆听<br class="desktop-break" />都回到你和音乐之间。</p>
+          <button type="button" class="chapter-action" data-go-next>
+            <span>进入静谧</span><span class="action-circle"><i data-lucide="arrow-down-right"></i></span>
+          </button>
+        </section>
+        <section class="chapter-copy" data-copy="1" aria-labelledby="silence-title" hidden>
+          <p class="eyebrow"><span class="chapter-number">02</span><span>LESS NOISE. MORE YOU.</span></p>
+          <h2 id="silence-title">世界退后。<br /><span class="soft-line">细节向前。</span></h2>
+          <p class="chapter-tagline">一圈微光，一整个安静的世界。</p>
+          <p class="chapter-description">指尖触及的细腻，耳边留下的纯粹。<br />从声音到触感，专注每一处细节。</p>
+          <button type="button" class="chapter-action" data-go-next>
+            <span>听见空间</span><span class="action-circle"><i data-lucide="arrow-down-right"></i></span>
+          </button>
+        </section>
+        <section class="chapter-copy" data-copy="2" aria-labelledby="spatial-title" hidden>
+          <p class="eyebrow"><span class="chapter-number">03</span><span>BE INSIDE THE SOUND</span></p>
+          <h2 id="spatial-title">不止听见。<br /><span class="soft-line">更是置身其中。</span></h2>
+          <p class="chapter-tagline">声音，有了空间的形状。</p>
+          <p class="chapter-description">感受音符的远近，让旋律在周围展开。<br />闭上眼，整个现场就在眼前。</p>
+          <button type="button" class="chapter-action" data-go-next>
+            <span>回到纯粹</span><span class="action-circle"><i data-lucide="arrow-down-right"></i></span>
+          </button>
+        </section>
+        <section class="chapter-copy" data-copy="3" aria-labelledby="form-title" hidden>
+          <p class="eyebrow"><span class="chapter-number">04</span><span>NOTHING BUT ESSENTIAL</span></p>
+          <h2 id="form-title">为耳朵而生。<br /><span class="soft-line">为自己而听。</span></h2>
+          <p class="chapter-tagline">ARC ONE，归于纯粹。</p>
+          <p class="chapter-description">石墨黑的沉稳，琥珀光的温度。<br />让声音成为你的日常，而非打扰。</p>
+          <button type="button" class="chapter-action" id="details-open">
+            <span>认识 ARC ONE</span><span class="action-circle"><i data-lucide="arrow-up-right"></i></span>
+          </button>
+        </section>
+      </div>
+
+      <aside class="product-caption" data-qa-region="caption">
+        <div class="caption-rule"></div>
+        <span id="material-caption">石墨黑 / 琥珀光</span>
+        <span class="micro-label" id="technical-caption">OVER-EAR WIRELESS HEADPHONES</span>
+      </aside>
+
+      <div class="chapter-side" aria-hidden="true"><span id="chapter-side-number">01</span><span class="chapter-side-rule"></span><span>04</span></div>
+
+      <footer class="experience-footer" data-qa-region="timeline">
+        <div class="footer-top">
+          <div class="now-playing"><span class="status-dot"></span><span id="chapter-status">初见</span><span class="scene-time" id="scene-time">00:02</span></div>
+          <div class="transport">
+            <button type="button" class="icon-button" id="replay" title="从头重播" aria-label="从头重播"><i data-lucide="rotate-ccw"></i></button>
+            <span class="transport-divider"></span>
+            <button type="button" class="icon-button" id="previous-chapter" title="上一章" aria-label="上一章" disabled><i data-lucide="arrow-left"></i></button>
+            <button type="button" class="icon-button next-button" id="next-chapter" title="下一章" aria-label="下一章"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </div>
+        <nav class="chapter-timeline" aria-label="影像章节">
+          <button type="button" class="timeline-item is-current" data-station-nav data-target="0" aria-current="step">
+            <span class="timeline-line"><span class="timeline-fill"></span></span>
+            <span class="timeline-label"><span class="timeline-index">01</span><span>初见</span><span class="timeline-en">ARRIVAL</span></span>
+          </button>
+          <button type="button" class="timeline-item" data-station-nav data-target="1">
+            <span class="timeline-line"><span class="timeline-fill"></span></span>
+            <span class="timeline-label"><span class="timeline-index">02</span><span>静界</span><span class="timeline-en">SILENCE</span></span>
+          </button>
+          <button type="button" class="timeline-item" data-station-nav data-target="2">
+            <span class="timeline-line"><span class="timeline-fill"></span></span>
+            <span class="timeline-label"><span class="timeline-index">03</span><span>共振</span><span class="timeline-en">RESONANCE</span></span>
+          </button>
+          <button type="button" class="timeline-item" data-station-nav data-target="3">
+            <span class="timeline-line"><span class="timeline-fill"></span></span>
+            <span class="timeline-label"><span class="timeline-index">04</span><span>纯粹</span><span class="timeline-en">ESSENCE</span></span>
+          </button>
+        </nav>
+        <div class="footer-bottom"><span>DESIGNED AROUND THE WAY YOU LISTEN.</span><span>© AURALIS <span class="concept-note">/ PRODUCT CONCEPT · AI 影像</span></span></div>
+      </footer>
+    </main>
+
+    <dialog class="film-dialog" id="film-dialog" aria-labelledby="film-title">
+      <div class="dialog-bar"><p id="film-title">AURALIS / ARC ONE<span>THE FILM · 00:15</span></p><button type="button" class="icon-button" id="film-close" aria-label="关闭影片" title="关闭影片"><i data-lucide="x"></i></button></div>
+      <video id="full-film" src="assets/arc-one-film.mp4" poster="assets/pause-04.jpg" controls playsinline preload="metadata"></video>
+      <div class="film-credit"><span>静下来，听见更多。</span><span>A STUDY IN SOUND</span></div>
+    </dialog>
+
+    <dialog class="details-dialog" id="details-dialog" aria-labelledby="details-title">
+      <button type="button" class="icon-button details-close" id="details-close" aria-label="关闭产品介绍" title="关闭产品介绍"><i data-lucide="x"></i></button>
+      <img src="assets/pause-04.jpg" width="1344" height="768" alt="石墨黑 ARC ONE 耳机与琥珀色灯环" />
+      <div class="details-content">
+        <p class="eyebrow">AURALIS / PRODUCT CONCEPT</p>
+        <h2 id="details-title">ARC ONE.</h2>
+        <p>让设计退后，让感受向前。</p>
+        <dl class="design-notes"><div><dt>形态</dt><dd>包耳式头戴设计</dd></div><div><dt>质感</dt><dd>石墨黑机身 / 细腻织物</dd></div><div><dt>光线</dt><dd>标志性琥珀灯环</dd></div><div><dt>表达</dt><dd>静谧 / 空间 / 纯粹</dd></div></dl>
+        <p class="details-disclaimer">ARC ONE 为产品视觉概念，非在售商品；页面不包含未经验证的性能参数。</p>
+        <button type="button" class="chapter-action" id="details-replay"><span>再次感受 ARC ONE</span><span class="action-circle"><i data-lucide="rotate-ccw"></i></span></button>
+      </div>
+    </dialog>
+    <audio id="sequence-audio" src="assets/arc-one-audio.m4a" preload="auto"></audio>
+    <div id="experience-announcement" class="sr-only" role="status" aria-live="polite"></div>
+    <noscript><style>.preloader{display:none!important}.site-header,.narrative{opacity:1!important}.header-nav,.header-actions,.chapter-action,.experience-footer{display:none!important}</style><div class="noscript-note">请启用 JavaScript 以观看动态影像。<a href="assets/arc-one-film.mp4">观看完整影片</a></div></noscript>
+  </body>
+</html>
